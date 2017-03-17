@@ -11,11 +11,12 @@ def index(request):
     context = {
         'categories': Category.objects.all(),
     }
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
 
-def product(request,id):
+
+def product(request, cod):
     template = loader.get_template('product.html')
     context = {
-        'product': Product.objects.get(id=id)
+        'product': Product.objects.get(id=cod)
     }
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))

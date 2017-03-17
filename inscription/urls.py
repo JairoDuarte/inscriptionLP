@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from  .views import  Views
+from .views import Views
+
 urlpatterns = [
-    url(r'^$',Views.index, name='index'),
-    url(r'product/(?P<id>[0-9]+)$',Views.product,name="product"),
+    url(r'^$', Views.index, name='index'),
+    url(r'product/(?P<id>[0-9]+)$', Views.product, name="product"),
 
     #mysite.com/product.pnp?id=
 ]
