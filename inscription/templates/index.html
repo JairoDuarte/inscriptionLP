@@ -4,11 +4,19 @@
     </head>
     <body>
         <h1>Welcomme to My Store</h1>
+
         {%for category in categories %}
             <h2>{{ category.name }}</h2>
             {% for product in category.product_set.all %}
                 <a href="/product/{{ product.id }}">{{ product.name }}</a>
             {% endfor  %}
         {% endfor %}
+        <h2>{{ user1.name }}</h2>
+    <h1>Fom</h1>
+    <form action="{% url 'inscription' %}" method="post">{% csrf_token %}
+        <input type="text" name="{user.name}" value=""/>
+        <input type="text" name="{user.year}" value="" />
+        <input type="submit">
+    </form>
     </body>
 </html>

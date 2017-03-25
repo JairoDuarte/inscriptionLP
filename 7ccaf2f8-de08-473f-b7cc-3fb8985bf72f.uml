@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>7ccaf2f8-de08-473f-b7cc-3fb8985bf72f</OriginalElement>
+  <nodes>
+    <node x="296.5" y="347.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:contacts</node>
+    <node x="413.5496356033453" y="2518.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user_user_permissions</node>
+    <node x="656.1746356033452" y="2463.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_admin_log</node>
+    <node x="1028.6875" y="812.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:specialite_OPF</node>
+    <node x="203.4385244922342" y="2518.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user_groups</node>
+    <node x="1081.4375" y="102.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:filiere</node>
+    <node x="-18.001290322580644" y="2518.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_group_permissions</node>
+    <node x="963.5" y="391.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:specialitelp</node>
+    <node x="997.9024988500764" y="1582.073796571898">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:category</node>
+    <node x="0.0" y="113.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:mention</node>
+    <node x="17.5" y="358.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:bac</node>
+    <node x="-18.001290322580644" y="2692.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_session</node>
+    <node x="1131.9375" y="391.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:optionfilieres</node>
+    <node x="826.5071380782404" y="939.7644462691162">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:age</node>
+    <node x="534.5" y="248.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplome</node>
+    <node x="142.73482078853044" y="2240.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_permission</node>
+    <node x="162.0" y="124.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:bactype</node>
+    <node x="1066.5071380782404" y="939.7644462691162">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplome_annee</node>
+    <node x="841.9583333333333" y="0.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplometype</node>
+    <node x="-1.251290322580644" y="2262.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_group</node>
+    <node x="1190.9024988500764" y="1582.073796571898">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_migrations</node>
+    <node x="967.9024988500764" y="1684.073796571898">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:inscription_product</node>
+    <node x="212.99870967741936" y="2692.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:sqlite_sequence</node>
+    <node x="516.8135244922341" y="2039.0683870967741">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_content_type</node>
+    <node x="371.25" y="658.0">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:candidat</node>
+    <node x="407.0496356033453" y="2163.068387096774">7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:specialite_OPF" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:optionfilieres">
+      <point x="55.50000000000006" y="-37.0" />
+      <point x="1195.1875" y="638.0" />
+      <point x="1202.9375" y="638.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:candidat" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:specialitelp">
+      <point x="150.75" y="-191.0" />
+      <point x="723.0" y="638.0" />
+      <point x="999.0" y="638.0" />
+      <point x="-35.5" y="37.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_permission" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_content_type">
+      <point x="0.0" y="-48.0" />
+      <point x="264.73482078853044" y="2138.068387096774" />
+      <point x="557.8135244922341" y="2138.068387096774" />
+      <point x="-41.0" y="37.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user_groups" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user">
+      <point x="42.0" y="-37.0" />
+      <point x="329.4385244922342" y="2443.068387096774" />
+      <point x="461.21630227001197" y="2443.068387096774" />
+      <point x="-108.33333333333331" y="125.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplome" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplometype">
+      <point x="-102.25" y="-180.0" />
+      <point x="636.75" y="77.0" />
+      <point x="872.4583333333333" y="77.0" />
+      <point x="-30.5" y="26.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_group_permissions" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_group">
+      <point x="-46.25" y="-37.0" />
+      <point x="-29.5" y="26.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user_user_permissions" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_permission">
+      <point x="-52.0" y="-37.0" />
+      <point x="465.5496356033453" y="2433.068387096774" />
+      <point x="325.73482078853044" y="2433.068387096774" />
+      <point x="61.0" y="48.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:specialite_OPF" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:specialitelp">
+      <point x="-55.49999999999994" y="-37.0" />
+      <point x="1084.1875" y="638.0" />
+      <point x="1070.0" y="638.0" />
+      <point x="35.5" y="37.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:bac" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:mention">
+      <point x="-64.75" y="-70.0" />
+      <point x="82.25" y="223.0" />
+      <point x="71.0" y="223.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_group_permissions" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_permission">
+      <point x="46.25" y="-37.0" />
+      <point x="120.74870967741936" y="2443.068387096774" />
+      <point x="203.73482078853044" y="2443.068387096774" />
+      <point x="-61.0" y="48.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplome" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:filiere">
+      <point x="102.25" y="-180.0" />
+      <point x="841.25" y="223.0" />
+      <point x="1121.9375" y="223.0" />
+      <point x="-40.5" y="48.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:optionfilieres" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:filiere">
+      <point x="0.0" y="-37.0" />
+      <point x="40.5" y="48.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_admin_log" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_content_type">
+      <point x="65.25" y="-92.0" />
+      <point x="851.9246356033452" y="2138.068387096774" />
+      <point x="639.8135244922341" y="2138.068387096774" />
+      <point x="41.0" y="37.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user_groups" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_group">
+      <point x="-42.0" y="-37.0" />
+      <point x="245.4385244922342" y="2433.068387096774" />
+      <point x="87.24870967741936" y="2433.068387096774" />
+      <point x="29.5" y="26.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:candidat" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplome">
+      <point x="50.25" y="-191.0" />
+      <point x="622.5" y="628.0" />
+      <point x="739.0" y="628.0" />
+      <point x="0.0" y="180.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:candidat" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:bac">
+      <point x="-150.75" y="-191.0" />
+      <point x="421.5" y="638.0" />
+      <point x="147.0" y="638.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user_user_permissions" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user">
+      <point x="52.0" y="-37.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:inscription_product" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:category">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:candidat" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:contacts">
+      <point x="-50.25" y="-191.0" />
+      <point x="522.0" y="628.0" />
+      <point x="405.5" y="628.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:django_admin_log" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:auth_user">
+      <point x="-65.25" y="-92.0" />
+      <point x="721.4246356033452" y="2443.068387096774" />
+      <point x="677.8829689366785" y="2443.068387096774" />
+      <point x="108.33333333333326" y="125.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:bac" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:bactype">
+      <point x="64.75" y="-70.0" />
+      <point x="211.75" y="223.0" />
+      <point x="223.0" y="223.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:filiere" target="7ccaf2f8-de08-473f-b7cc-3fb8985bf72f.TABLE:diplometype">
+      <point x="0.0" y="-48.0" />
+      <point x="1162.4375" y="77.0" />
+      <point x="933.4583333333333" y="77.0" />
+      <point x="30.5" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.48886101354741596" x="789.5526018680079" y="686.6588319819357" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

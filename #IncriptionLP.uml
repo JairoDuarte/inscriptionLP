@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DjangoModelDependency</ID>
+  <OriginalElement>#IncriptionLP</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1151.0">inscription.models.models.Age</node>
+    <node x="1561.25" y="135.0">inscription.models.models.Mention</node>
+    <node x="0.0" y="435.0">inscription.models.models.OptionFiliere</node>
+    <node x="296.0" y="435.0">inscription.models.models.SpecialiteLP</node>
+    <node x="588.0" y="292.0">inscription.models.Diplome.Diplome</node>
+    <node x="1101.0" y="391.0">inscription.models.Contacts.Contacts</node>
+    <node x="440.97916666666663" y="0.0">inscription.models.models.DiplomeType</node>
+    <node x="794.0" y="724.0">inscription.models.models.Candidat</node>
+    <node x="1289.25" y="146.0">inscription.models.models.BacType</node>
+    <node x="342.0" y="1151.0">inscription.models.models.DiplomeAnnee</node>
+    <node x="84.0" y="878.0">inscription.models.models.SpecialiteOptionFiliere</node>
+    <node x="1404.0" y="402.0">inscription.models.models.Bac</node>
+    <node x="76.0" y="124.0">inscription.models.models.Filiere</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="inscription.models.models.Bac" target="inscription.models.models.Mention">
+      <point x="73.25" y="-81.0" />
+      <point x="1623.75" y="267.0" />
+      <point x="1685.75" y="267.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="inscription.models.models.Candidat" target="inscription.models.models.SpecialiteLP">
+      <point x="-183.375" y="-191.0" />
+      <point x="855.125" y="704.0" />
+      <point x="500.0" y="704.0" />
+      <point x="68.0" y="48.0" />
+    </edge>
+    <edge source="inscription.models.models.OptionFiliere" target="inscription.models.models.Filiere">
+      <point x="0.0" y="-48.0" />
+      <point x="-62.0" y="59.0" />
+    </edge>
+    <edge source="inscription.models.models.Candidat" target="inscription.models.Contacts.Contacts">
+      <point x="61.125" y="-191.0" />
+      <point x="1099.625" y="694.0" />
+      <point x="1242.5" y="694.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="inscription.models.models.Candidat" target="inscription.models.Diplome.Diplome">
+      <point x="-61.125" y="-191.0" />
+      <point x="977.375" y="694.0" />
+      <point x="834.5" y="694.0" />
+      <point x="0.0" y="191.0" />
+    </edge>
+    <edge source="inscription.models.Diplome.Diplome" target="inscription.models.models.Filiere">
+      <point x="-123.25" y="-191.0" />
+      <point x="711.25" y="267.0" />
+      <point x="262.0" y="267.0" />
+      <point x="62.0" y="59.0" />
+    </edge>
+    <edge source="inscription.models.models.SpecialiteOptionFiliere" target="inscription.models.models.OptionFiliere">
+      <point x="-83.5" y="-37.0" />
+      <point x="167.5" y="704.0" />
+      <point x="138.0" y="704.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="inscription.models.models.SpecialiteOptionFiliere" target="inscription.models.models.SpecialiteLP">
+      <point x="83.5" y="-37.0" />
+      <point x="334.5" y="704.0" />
+      <point x="364.0" y="704.0" />
+      <point x="-68.0" y="48.0" />
+    </edge>
+    <edge source="inscription.models.models.Filiere" target="inscription.models.models.DiplomeType">
+      <point x="0.0" y="-59.0" />
+      <point x="200.0" y="99.0" />
+      <point x="510.47916666666663" y="99.0" />
+      <point x="-69.5" y="37.0" />
+    </edge>
+    <edge source="inscription.models.models.Candidat" target="inscription.models.models.Bac">
+      <point x="183.375" y="-191.0" />
+      <point x="1221.875" y="704.0" />
+      <point x="1550.5" y="704.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="inscription.models.models.Bac" target="inscription.models.models.BacType">
+      <point x="-73.25" y="-81.0" />
+      <point x="1477.25" y="267.0" />
+      <point x="1415.25" y="267.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="inscription.models.Diplome.Diplome" target="inscription.models.models.DiplomeType">
+      <point x="123.25" y="-191.0" />
+      <point x="957.75" y="99.0" />
+      <point x="649.4791666666666" y="99.0" />
+      <point x="69.5" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4926269797924631" x="905.5" y="612.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+

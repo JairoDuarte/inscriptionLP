@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static  'assets/font-awesome/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/form-elements.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'assets/ico/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'assets/ico/apple-touch-icon-114-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'assets/ico/apple-touch-icon-72-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'assets/ico/apple-touch-icon-57-precomposed.png' %}">
+
+
+    <title>Title</title>
+</head>
+<body>
+    <form  method="post">
+        {% csrf_token %}
+        {% load css_tag_extras %}
+
+        {% for field in form %}
+            <div class="form-group {% if field.errors %}has-error{% endif %}">
+                <label for="{{ field.auto_id }}"
+                       >{{ field.label }}
+                </label>
+                {{ field | addcss:"form-control" }}
+            </div>
+
+            {% if field.errors %}
+            <div class="form-group">
+                <div class="alert alert-danger" role="alert">
+                {% for error in field.errors %}
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">{{ error }}</span>
+                    {{ error }}
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            {{ field.help_text }}
+        {% endfor %}
+        {# {{ formcont.as_p }} {{ formbac.as_p }} {{ formdip.as_p }} #}
+
+        <input type="submit" value="Submit" />
+    </form>
+
+<!-- Javascript -->
+<script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.backstretch.min.js' %}"></script>
+<script src="{% static 'assets/js/retina-1.1.0.min.js' %}"></script>
+<script src="{% static 'assets/js/scripts.js' %}"></script>
+
+</body>
+</html>

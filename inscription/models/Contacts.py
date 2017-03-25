@@ -1,9 +1,15 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import ugettext as _
+from .Candidat import Candidat
 
 
 class Contacts(models.Model):
+    candidat = models.OneToOneField(
+        Candidat,
+        on_delete=models.CASCADE,
+        verbose_name=_('Candidatinfo')
+        )
     email = models.EmailField(
         _('email'),
         max_length=80,
