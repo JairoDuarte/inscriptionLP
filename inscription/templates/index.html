@@ -13,9 +13,9 @@
         {% endfor %}
         <h2>{{ user1.name }}</h2>
     <h1>Fom</h1>
-    <form action="{% url 'inscription' %}" method="post">{% csrf_token %}
-        <input type="text" name="{user.name}" value=""/>
-        <input type="text" name="{user.year}" value="" />
+    <form action="{% url 'inscription' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
         <input type="submit">
     </form>
     </body>

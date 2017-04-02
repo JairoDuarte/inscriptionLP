@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 # Create your views here.
+from django.urls import reverse
 from django.views.generic import CreateView
 
 from inscription.forms.formsCandidat import *
@@ -17,9 +18,11 @@ class User:
 
 def index(request):
     template = loader.get_template('index.html')
+    form = CandidatFormIn()
 
     context = {
         'categories': Category.objects.all(),
+        'form':form,
     }
     return HttpResponse(template.render(context, request))
 
@@ -39,7 +42,7 @@ def addcandidat(request):
 def CandidatAdd(request):
 
     if request.method == 'POST':
-        return render(request, 'candidat_form.html', context)
+        return render(request, 'candidat_form.html')
         form = CandidatFormIn(request.POST)
         formcont = ContactsFormIn(request.POST)
         formdip = DiplomeFormIn(request.POST)
@@ -69,22 +72,17 @@ def CandidatAdd(request):
 def inscription(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
+        form = CandidatFormIn(request.POST)
+        #if form.is_valid():
+          #  i =1
+        #else:
+         #   return render(request,'index.html',{'form':form})  # (request, 'index.html')
 
-        # create a form instance and populate it with data from the request:
-        formset = CandidatFormIn(request.POST)
+
+            # create a form instance and populate it with data from the request:
+        #formset = CandidatFormIn(request.POST)
         # check whether it's valid:
-        user = request.POST['user']
-        return  (request, 'product.html', {'formset': formset, 'user': user})
+        #user = request.POST['user']
 
-
-
-        if formset.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/')
-
-    # if a GET (or any other method) we'll create a blank form
-
-
-    return render(request,'candidat_form.html')
+        # if a GET (or any other method) we'll create a blank form
+    return  redirect(reverse('index'))
