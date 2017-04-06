@@ -7,8 +7,8 @@ from django.urls import reverse
 from django.views.generic import CreateView
 
 from inscription.forms.formsCandidat import *
-from inscription.models.Category import Category
-from inscription.models.Product import Product
+from inscription.outils.Calcule import CalculeCandidat
+
 
 class User:
     def __init__(self,name,year):
@@ -21,18 +21,9 @@ def index(request):
     form = CandidatFormIn()
 
     context = {
-        'categories': Category.objects.all(),
-        'form':form,
     }
     return HttpResponse(template.render(context, request))
 
-
-def product(request, id):
-    template = loader.get_template('product.html')
-    context = {
-        'product': Product.objects.get(id=id)
-    }
-    return HttpResponse(template.render(context, request))
 
 
 def addcandidat(request):
@@ -42,31 +33,53 @@ def addcandidat(request):
 def CandidatAdd(request):
 
     if request.method == 'POST':
-        return render(request, 'candidat_form.html')
         form = CandidatFormIn(request.POST)
         formcont = ContactsFormIn(request.POST)
         formdip = DiplomeFormIn(request.POST)
         formbac = BacFormIn(request.POST)
-        if form.is_valid() and formcont.is_valid() and formbac.is_valid() and formdip.is_valid():
-            #form.save()
-            #formcont.save()
-            render(request,'index.html')
+        t = form.is_valid()
+        k = formbac.is_valid()
+        c = formcont.is_valid()
+        d = formdip.is_valid()
 
+        if form.is_valid() and formcont.is_valid() and formbac.is_valid() and formdip.is_valid():
+            candidat = form.save(commit=False)
+            candidat.save()
+            diplome = formdip.save(commit=False)
+            diplome.moyenne_1_an = CalculeCandidat.moyenne_1(diplome=diplome)
+            diplome.moyenne_2_an = CalculeCandidat.moyenne_2(diplome=diplome)
+            diplome.moyenneDiplome = CalculeCandidat.moyenne(diplome=diplome)
+            bac = formbac.save(commit=False)
+            contacts = formcont.save(commit=False)
+            contacts.candidat =candidat
+            contacts.save()
+            diplome.candidat = candidat
+            diplome.save()
+            bac.candidat = candidat
+            bac.save()
+            candidat.preselection_note = CalculeCandidat.preselection_note(diplome=diplome,valeur=bac.mention.valeur)
+            candidat.age_note = CalculeCandidat.age_note(candidat.age())
+            candidat.validation_diplome_note = CalculeCandidat.validation_diplome(diplome.nbr_redoublements)
+            candidat.save()
+
+            return render(request,'index.html')
+            # form.save()
+            # formcont.save()
+        else:
+            return render(request, 'inscription.html', context={'form':form, 'formcont':formcont, 'formdip':formdip,'formbac':formbac,})
     else:
         form = CandidatFormIn()
         formcont = ContactsFormIn()
         formdip = DiplomeFormIn()
         formbac = BacFormIn()
 
-    context = {
-        'categories': Category.objects.all(),
-        'form':form,
-        'formcont':formcont,
-        'formdip':formdip,
-        'formbac':formbac,
-    }
-
-    return render(request,'inscription.html',context)
+        context = {
+            'form':form,
+            'formcont':formcont,
+            'formdip':formdip,
+            'formbac':formbac,
+        }
+        return render(request,'inscription.html',context)
 
 
 def inscription(request):

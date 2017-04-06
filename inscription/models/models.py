@@ -74,9 +74,10 @@ class Mention(models.Model):
         _('libelle'),
         max_length=32)
 
-    valeur = models.CharField(
-        _('interval'),
-        max_length=10)
+    valeur = models.DecimalField(
+        _('valeur'),
+        max_digits=10,
+        decimal_places=2)
 
     def __str__(self):
         return self.libelle

@@ -3,8 +3,6 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext as _
 from django.utils import timezone
-from .models import SpecialiteLP
-
 
 class Candidat(models.Model):
     cin = models.CharField(
@@ -19,37 +17,17 @@ class Candidat(models.Model):
         _('Nom'),
         max_length=100)
     prenom = models.CharField(
-        _('Prenom'),
+        _('Prénom'),
         max_length=100)
     nationalite = models.CharField(
         _('nationalité'),
         max_length=100)
     lieu_naissance = models.CharField(
-        _('pays de nassaince'),
+        _('Pays de nassaince'),
         max_length=100)
     date_nass = models.DateField(
-        _('date naissance'))
-    specialitelp = models.ForeignKey(
-        SpecialiteLP,
-        verbose_name=_('Specialité LP'))
-    """
-    diplome = models.OneToOneField(
-        Diplome,
-        on_delete=models.CASCADE,
-        verbose_name=_('diplome'))
-    diplomebac = models.OneToOneField(
-        Bac,
-        on_delete=models.CASCADE,
-        verbose_name=_('degree specialty'),
-        null=True,
-        blank=True)
+        _('Date naissance'))
 
-    contacts = models.OneToOneField(
-        Contacts,
-        #unique=True,
-        on_delete=models.CASCADE,
-        verbose_name=_('contacts du candidat'))
-    """
     preselection_note = models.DecimalField(
         _('Note Pre-selection'),
         max_digits=11,

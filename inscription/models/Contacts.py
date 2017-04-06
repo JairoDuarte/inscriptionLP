@@ -11,25 +11,25 @@ class Contacts(models.Model):
         verbose_name=_('Candidatinfo')
         )
     email = models.EmailField(
-        _('email'),
+        _('Email'),
         max_length=80,
         unique=True)
     portable_phone = models.CharField(
-        _('telephone portable'),
+        _('Telephone portable'),
         max_length=20,
         unique=True)
     fixe_phone = models.CharField(
-        _('telephone fixe'),
+        _('Telephone fixe'),
         max_length=20,
         blank=True)
     adresse = models.CharField(
-        _('adresse de residence'),
+        _('adresse de résidence'),
         max_length=255)
     ville = models.CharField(
-        _('ville de residence'),
+        _('Ville de résidence'),
         max_length=100)
     pays = models.CharField(
-        _('pays de residence'),
+        _('pays de résidence'),
         max_length=100)
 
     def __str__(self):

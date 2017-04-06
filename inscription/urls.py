@@ -20,7 +20,6 @@ urlpatterns = [
     url(r'^$', Views.index, name='index'),
     url(r'inscription/add/$', Views.CandidatAdd, name='inscription'),
     url(r'inscription/all/$', Views.inscription, name='inscription'),
-    url(r'product/(?P<id>[0-9]+)$', Views.product, name="product"),
 
     #mysite.com/product.pnp?id=
 ]

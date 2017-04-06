@@ -1,3 +1,21 @@
+<div class="form-group">
+                                    <div class="alert alert-danger" role="alert">
+
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">Saisissez une date valide.</span>
+                                        Saisissez une date valide.
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
 <%--
   Created by IntelliJ IDEA.
   User: mac
