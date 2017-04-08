@@ -95,7 +95,7 @@ class Diplome(models.Model):
 
     specialitelp = models.ForeignKey(
         SpecialiteLP,
-        verbose_name=_('Specialité LP'))
+        verbose_name=_('Indiquez la formation souhaitée'))
 
     moyenne_1_an = models.DecimalField(
         _('moyenne 1 année'),

@@ -9,3 +9,202 @@
         <h2>{{ product.description}}</h2>
     </body>
 </html>
+
+
+<h1>Login</h1>
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Submit" />
+</form>
+
+
+
+<h1>Welcomme to My Store</h1>
+
+    {%for category in categories %}
+        <h2>{{ category.name }}</h2>
+        {% for product in category.product_set.all %}
+            <a href="/product/{{ product.id }}">{{ product.name }}</a>
+        {% endfor  %}
+    {% endfor %}
+    <h2>{{ user1.name }}</h2>
+    <h1>Fom</h1>
+    <form action="{% url 'inscription' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+
+
+
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h2><strong>École Superieure de Technologie de Casablanca</strong></h2>
+                    <div class="description">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 form-box">
+                    <form role="form" name="addform" method="post" class="f1">
+                        {% csrf_token %}
+                        {% load css_tag_extras %}
+
+                        </br>
+                        <div class="f1-steps">
+                            <div class="f1-progress">
+                                <div class="f1-progress-line" data-now-value="12.5" data-number-of-steps="4" style="width: 12.5%;"></div>
+                            </div>
+                            <div class="f1-step active">
+                                <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                                <p>Informations personnelles</p>
+                            </div>
+                            <div class="f1-step">
+                                <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                                <p>contacts et adresse</p>
+                            </div>
+                            <div class="f1-step">
+                                <div class="f1-step-icon"><i class="fa fa-mortar-board"></i></div>
+                                <p>Bac</p>
+                            </div>
+                            <div class="f1-step">
+                                <div class="f1-step-icon"><i class="fa fa-mortar-board"></i></div>
+                                <p>Bac+2</p>
+                            </div>
+                        </div>
+                        <div class="errors" id="_errors"> </div>
+
+                        {# datepicker #}
+                        <div id="container"></div>
+
+                        <fieldset>
+                            {% for field in form %}
+                                <div class="form-group ">
+                                    <label for="{{ field.auto_id }}"
+                                           >{{  field.label }}
+                                    </label>
+                                    {{ field | addcss:"form-control" }}
+                                </div>
+
+                                {% if field.errors %}
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert">
+                                    {% for error in field.errors %}
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">{{ error }}</span>
+                                        {{ error }}
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {{ field.help_text }}
+                            {% endfor %}
+
+                            <div class="f1-buttons">
+                                <button type="button" class="btn btn-next">Suivant</button>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <h4>saisissez vos informations de contacts:</h4>
+
+                            {% for field in formcont %}
+                                <div class="form-group ">
+                                    <label for="{{ field.auto_id }}"
+                                           >{{  field.label }}
+                                    </label>
+                                    {{ field | addcss:"form-control" }}
+                                </div>
+
+                                {% if field.errors %}
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert">
+                                    {% for error in field.errors %}
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">{{ error }}</span>
+                                        {{ error }}
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {{ field.help_text }}
+                            {% endfor %}
+
+                            <div class="f1-buttons">
+                                <button type="button" class="btn btn-previous">Précédent</button>
+                                <button type="button" class="btn btn-next">Suivant</button>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <h4>saisissez vos informations du baccalauréat:</h4>
+
+                            {% for field in formbac %}
+                                <div class="form-group ">
+                                    <label for="{{ field.auto_id }}"
+                                           >{{  field.label }}
+                                    </label>
+                                    {{ field | addcss:"form-control" }}
+                                </div>
+
+                                {% if field.errors %}
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert">
+                                    {% for error in field.errors %}
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">{{ error }}</span>
+                                        {{ error }}
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {{ field.help_text }}
+                            {% endfor %}
+
+                            <div class="f1-buttons">
+                                <button type="button" class="btn btn-previous">Précédent</button>
+                                <button type="button" class="btn btn-next">Suivant</button>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <h4>saisissez vos informations du bac+2:</h4>
+                            {% for field in formdip %}
+                                <div class="form-group ">
+                                    <label for="{{ field.auto_id }}"
+                                           >{{ field.label }}
+                                    </label>
+                                    {{ field | addcss:"form-control" }}
+                                </div>
+
+                                {% if field.errors %}
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert">
+                                    {% for error in field.errors %}
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">{{ error }}</span>
+                                        {{ error }}
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {{ field.help_text }}
+                            {% endfor %}
+
+                            <div class="f1-buttons">
+                                <button type="button" class="btn btn-previous">Précédent</button>
+                                 <button type="button" value="submit" class="btn btn-submit">Enregistrer</button>
+                            </div>
+
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>

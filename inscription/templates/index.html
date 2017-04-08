@@ -1,22 +1,42 @@
-<html>
-    <head>
-        <title>My Store</title>
-    </head>
-    <body>
-        <h1>Welcomme to My Store</h1>
+{% extends "base_html.html" %}
+{% load static %}
+{% block title %}LP ESTC {% endblock title %}
+{% block link_s %}{% endblock link_s %}
+{% block content %}
+<p> </p>
+    <div class="article-content">
+        <div class="main-title" style="border-left: 0px solid #515A68;">
+            <a href="{% url 'inscription' %}"><h2 >S’inscrire en licence professionnelle</h2></a>
+        </div>
+        <div class="index-article">
+                <img src="{% static 'img/index_img.jpg' %}" alt="S’inscrire en licence professionnelle">
+            <p class="caps">
+                <strong>Vous êtes titulaire ou vous préparez un diplôme de niveau Bac+2 (ou un diplôme équivalent) ?</strong>
+            </p>
+            <p>L’EST de Casablanca propose
+                <a href="http://www.est-uh2c.ac.ma/forminil.php">6 licences professionnelles (bac+3 en un 1 an)&nbsp;</a>
+                dans de nombreux domaines (communication, commerce, électricité et électronique, automatique et informatique,
+                logistique...
+            </p>
 
-        {%for category in categories %}
-            <h2>{{ category.name }}</h2>
-            {% for product in category.product_set.all %}
-                <a href="/product/{{ product.id }}">{{ product.name }}</a>
-            {% endfor  %}
-        {% endfor %}
-        <h2>{{ user1.name }}</h2>
-    <h1>Fom</h1>
-    <form action="{% url 'inscription' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit">
-    </form>
-    </body>
-</html>
+            <p><strong style="color: lightgoldenrodyellow">La procédure est dématérialisée.</strong></p>
+            <p>Le service ouvre à une date unique pour toutes les formations.
+               <a href="http://www.est-uh2c.ac.ma"> Consulter le calendrier de la campagne de recrutement</a>.</p>
+            <p>Les dates de clôture des candidatures sont différentes selon les formations. Pour connaître les dates de clôture, suivez les informations
+                mises en ligne sur les pages de chaque formation dans la rubrique «&nbsp;Admission&nbsp;».
+            </p>
+            <p><strong style="color: lightgoldenrodyellow">ATTENTION<br> </strong></p>
+            <p>Les dossiers incomplets ne seront pas examinés par le jury de recrutement.<strong><br> </strong>
+            </p><ul><li><strong>Votre admission reste subordonnée à votre réussite au diplôme vous donnant accès à la formation.</strong></li><li><strong>
+            Pour les formations en alternance, vous devez conclure un contrat d’apprentissage ou de professionnalisation.</strong></li>
+            <li><strong>Pour les candidats relevant de la formation continue (congé individuel de formation, etc.), vous devez effectuer un stage correspondant
+                au rythme alternant de la formation choisie.</strong></li></ul>
+            <br/>
+            <a href="{% url 'update' %}" ><h4 style="font-family: 'Comic Sans MS';text-decoration: underline">Modifier les informations d'inscription</h4></a>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+

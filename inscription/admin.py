@@ -35,7 +35,7 @@ class BacInline(admin.StackedInline):
 class CandidatAdmin(admin.ModelAdmin):
 
     inlines = (ContactsInline,BacInline,DiplomeInline,)
-    list_display = [field.name for field in Candidat._meta.fields if field.name != "id"] #Candidat._meta.get_fields
+    list_display = [field.name for field in Candidat._meta.fields if field.name != "id" and field.name !="user" and field.name !="dateAdd"] #Candidat._meta.get_fields
     #list_display.append(Candidat.bac)
     #list_display.append(Candidat.contacts)
     """

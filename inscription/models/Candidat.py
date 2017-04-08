@@ -1,10 +1,17 @@
 from __future__ import unicode_literals
+
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext as _
 from django.utils import timezone
 
 class Candidat(models.Model):
+    user = models.OneToOneField(
+        User,
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE)
     cin = models.CharField(
         _('(CIN)'),
         max_length=50,
@@ -51,6 +58,10 @@ class Candidat(models.Model):
         _('Validation diplome'),
         max_digits=11,
         decimal_places=2,
+        null=True,
+        blank=True)
+    dateAdd = models.DateField(
+        _('Date d\'ajout'),
         null=True,
         blank=True)
 

@@ -51,6 +51,10 @@ class ContactsFormIn(ModelForm):
         fields = '__all__'
         exclude = ('candidat',)
 
+class LoginForm(forms.Form):
+    username = forms.CharField(label='CNE', max_length=14)
+    password = forms.CharField(widget=forms.PasswordInput())
+
 
 class CandidatFormIn(ModelForm):
 
@@ -69,8 +73,14 @@ class CandidatFormIn(ModelForm):
     class Meta:
         model = Candidat
         fields = '__all__'
-        exclude = ('preselection_note', 'age_note', 'concours_note', 'validation_diplome_note')
+        exclude = ('preselection_note', 'age_note', 'concours_note', 'validation_diplome_note', 'user','dateAdd')
 
+class CandidatUpdateFormIn(CandidatFormIn):
+    def __init__(self, *args, **kwargs):
+        super(CandidatUpdateFormIn, self).__init__(*args, **kwargs)
+        self.fields['cin'].disabled = True
+        self.fields['cne'].disabled = True
+        self.fields['email'].disabled = True
 
 """
 

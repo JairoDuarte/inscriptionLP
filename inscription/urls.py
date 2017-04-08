@@ -18,8 +18,11 @@ from .views import Views
 
 urlpatterns = [
     url(r'^$', Views.index, name='index'),
-    url(r'inscription/add/$', Views.CandidatAdd, name='inscription'),
-    url(r'inscription/all/$', Views.inscription, name='inscription'),
+    url(r'inscription/add/$', Views.candidatAdd, name='inscription'),
+    url(r'inscription/update/$', Views.candidatUpdate, name='update'),
+    url(r'^inscription/login/$', Views.login_view, name='Login'),
+    url(r'^inscription/logout/$', Views.logout_view, name='Logout'),
+
 
     #mysite.com/product.pnp?id=
 ]

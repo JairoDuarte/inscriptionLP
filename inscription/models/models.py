@@ -35,7 +35,7 @@ class DiplomeAnnee(models.Model):
         decimal_places=2)
 
     def __str__(self):
-        return self.points
+        return str(self.points) +" - "+str(self.max_annee)
 
     class Meta:
         verbose_name_plural = 'diplome_annees'
