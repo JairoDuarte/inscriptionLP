@@ -2,7 +2,10 @@
 
 {% load static %}
 {% block title %}{{ title }}{% endblock title %}
-{% block link_s %}{% endblock link_s %}
+{% block link_s %}
+
+{% endblock link_s %}
+
 {% block content %}
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text">
@@ -150,7 +153,6 @@
                             </label>
                             {{ field | addcss:"form-control" }}
                         </div>
-
                         {% if field.errors %}
                         <div class="form-group">
                             <div class="alert alert-danger" role="alert">

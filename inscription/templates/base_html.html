@@ -1,0 +1,111 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    {% block bootstrap %}
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static  'assets/font-awesome/css/font-awesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/form-elements.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+    {% endblock bootstrap %}
+
+    {% block datepicker_css %}
+        <link rel="stylesheet" href="{% static 'assets/js/pickerdate/themes/default.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/js/pickerdate/themes/default.date.css'%}">
+    {% endblock %}
+
+    {% block favicon %}
+    <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'assets/ico/apple-touch-icon-144-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'assets/ico/apple-touch-icon-114-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'assets/ico/apple-touch-icon-72-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'assets/ico/apple-touch-icon-57-precomposed.png' %}">
+    {% endblock favicon %}
+    {% block extra_css %}{% endblock extra_css %}
+
+
+    <title>{% block title %}Inscription LP{% endblock title %}</title>
+</head>
+<body>
+    <header class="clear-fix">
+        <div class="container">
+            <div  style="text-align: right; ">
+                {% block link_s %}
+                    <a href="{% url 'inscription' %}" style="text-decoration: underline">S'inscrire</a>
+                    &nbsp;&nbsp;
+                    <a href="{% url 'update' %}" style="text-decoration: underline">Modifier</a>&nbsp;&nbsp;
+                {% endblock link_s %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-xs-6 text-left"><img src="{% static 'img/logo_estc.png' %}" alt="École Supérieure de Technologie de Casablanca"/></div>
+            <div class="col-xs-6 text-right"><img src="{% static 'img/logo_uh2c.png' %}" alt="Université Hassan II de Casablanca"/></div>
+        </div>
+    </header>
+    <div class="top-content">
+        <div class="container">
+            {% block header %}{% endblock header %}
+            {% block flashmessages %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <div class="alert alert-{{ msg.level_tag }}" role="alert">
+                            <div class="container">{{ msg.message }}</div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endblock flashmessages %}
+            {% block content %} {% endblock content %}
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>© École Supérieure de Technologie de Casablanca</p>
+            <p>Développé par LP GLAASRI - Département Génie Informatique</p>
+        </div>
+    </footer>
+<!-- Javascript -->
+    {% block script_js %}
+        <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.backstretch.min.js' %}"></script>
+        <script src="{% static 'assets/js/retina-1.1.0.min.js' %}"></script>
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
+
+    {% endblock %}
+
+    {% block datepiker_js %}
+        <script src="{% static 'assets/js/pickerdate/picker.js' %}"></script>
+        <script src="{% static 'assets/js/pickerdate/picker.date.js' %}"></script>
+        <script src="{% static 'assets/js/pickerdate/legacy.js' %}"></script>
+
+        <script>
+            var $input = $('.datepicker').pickadate({
+                monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+                today: 'aujourd\'hui',
+                clear: 'effacer',
+                format: 'dd/mm/yyyy',
+                // min: [2015, 7, 14],
+                container: '#container',
+                // editable: true,
+                closeOnSelect: false,
+                closeOnClear: false,
+                selectMonths: true,
+                selectYears: true,
+                max:true,
+            });
+            var picker = $input.pickadate('picker')
+        </script>
+
+
+    {% endblock %}
+
+</body>
+</html>
