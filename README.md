@@ -1,3 +1,1 @@
-# inscriptionLP
-inscriptionLP
-Inscription à la licence professionelle à l'EST de Casablanca
+App d'inscription à la licence professionelle à l'EST de Casablanca
